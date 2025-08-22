@@ -1,0 +1,31 @@
+<h2>Usuarios</h2>
+
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="error" style="color:#b00">{{ error }}</div>
+
+
+
+<table class="table" *ngIf="!loading && !error && usuarios.length">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Fecha Nacimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of usuarios">
+      <td>{{ u.idUsuario }}</td>
+      <td>{{ u.nombre }}</td>
+      <td>{{ u.apellidoPaterno }}</td>
+      <td>{{ u.email }}</td>
+      <td>{{ u.fechaNacimiento}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loading && !error && !usuarios.length">
+  No hay usuarios para mostrar.
+</div>

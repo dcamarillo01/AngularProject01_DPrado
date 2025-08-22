@@ -10,7 +10,18 @@ const PROXY_CONFIG = [
     ],
     target,
     secure: false
+  },
+  {
+    "/api": {
+      "target": "http://localhost:5128",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
   }
+
 ]
 
 module.exports = PROXY_CONFIG;
+
+
